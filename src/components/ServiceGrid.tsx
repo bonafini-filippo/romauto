@@ -1,26 +1,16 @@
-'use client';
-
-import type React from 'react';
-import { motion } from 'motion/react';
 import { SERVICES } from '@/lib/services';
-import { stagger, fadeUp } from '@/lib/animations';
+import { AnimatedSection } from './AnimatedSection';
 import { ServiceCard } from './ServiceCard';
 import styles from './ServiceGrid.module.css';
 
 export function ServiceGrid() {
   return (
-    <motion.div
-      className={styles.grid}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-80px' }}
-      variants={stagger}
-    >
+    <div className={styles.grid}>
       {SERVICES.map((service) => (
-        <motion.div key={service.slug} className={styles.item} variants={fadeUp} style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}>
+        <AnimatedSection key={service.slug}>
           <ServiceCard service={service} />
-        </motion.div>
+        </AnimatedSection>
       ))}
-    </motion.div>
+    </div>
   );
 }

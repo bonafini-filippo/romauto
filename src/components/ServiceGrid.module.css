@@ -4,10 +4,6 @@
   gap: 16px;
 }
 
-.item {
-  opacity: 0; /* CSS safety net for WAAPI handoff */
-}
-
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;

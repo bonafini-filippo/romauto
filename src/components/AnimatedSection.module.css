@@ -1,6 +1,41 @@
-/* CSS safety net: keeps element hidden even when motion removes
-   inline styles during WAAPI animation handoff. Motion's inline
-   opacity:1 or WAAPI animation overrides this after animation. */
-.hidden {
+/* ── Base transition (shared by all variants) ── */
+.fadeUp,
+.fadeIn,
+.fadeLeft,
+.fadeRight,
+.scaleIn {
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Hidden states ── */
+.fadeUp {
   opacity: 0;
+  transform: translateY(30px);
+}
+
+.fadeIn {
+  opacity: 0;
+}
+
+.fadeLeft {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fadeRight {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.scaleIn {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* ── Visible state ── */
+.visible {
+  opacity: 1;
+  transform: none;
 }

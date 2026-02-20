@@ -1,9 +1,4 @@
-'use client';
-
-import type React from 'react';
-import { motion } from 'motion/react';
 import { CircleDot } from 'lucide-react';
-import { stagger, fadeUp } from '@/lib/animations';
 import { AnimatedSection } from './AnimatedSection';
 import { SectionHeading } from './SectionHeading';
 import styles from './BrandLogos.module.css';
@@ -22,21 +17,17 @@ export function BrandLogos() {
             center
           />
         </AnimatedSection>
-        <motion.div
-          className={styles.grid}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-60px' }}
-          variants={stagger}
-        >
+        <div className={styles.grid}>
           {BRANDS.map((brand) => (
-            <motion.div key={brand} className={styles.brand} variants={fadeUp} style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}>
-              <CircleDot size={28} className={styles.brandIcon} />
-              <span className={styles.separator} />
-              <span className={styles.brandName}>{brand}</span>
-            </motion.div>
+            <AnimatedSection key={brand}>
+              <div className={styles.brand}>
+                <CircleDot size={28} className={styles.brandIcon} />
+                <span className={styles.separator} />
+                <span className={styles.brandName}>{brand}</span>
+              </div>
+            </AnimatedSection>
           ))}
-        </motion.div>
+        </div>
         <AnimatedSection>
           <p className={styles.note}>
             Per garantirvi una tenuta di strada perfetta a prezzi ottimi, con tante offerte
