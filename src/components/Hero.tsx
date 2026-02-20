@@ -1,10 +1,9 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, ArrowRight, ShieldCheck } from 'lucide-react';
-import { motion, useInView } from 'motion/react';
 import { CountUp } from './CountUp';
 import styles from './Hero.module.css';
 
@@ -13,7 +12,23 @@ const highlightWords = ['dei', 'vostri', 'veicoli'];
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '-10%' },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className={styles.hero} ref={ref}>
@@ -21,77 +36,53 @@ export function Hero() {
       <div className={styles.bgGrid} />
       <div className={styles.bgGlow1} />
       <div className={styles.bgGlow2} />
-      <motion.div
-        className={styles.bgLine}
-        initial={{ scaleY: 0 }}
-        animate={isInView ? { scaleY: 1 } : {}}
-        transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      <div
+        className={`${styles.bgLine} ${isInView ? styles.bgLineVisible : ''}`}
       />
 
       <div className={styles.inner}>
         {/* Content */}
         <div className={styles.content}>
-          <motion.span
-            className={styles.eyebrow}
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          <span
+            className={`${styles.eyebrow} ${isInView ? styles.eyebrowVisible : ''}`}
           >
             <span className={styles.eyebrowLine} />
             Autofficina Romauto — Faenza
-          </motion.span>
+          </span>
 
           <h1 className={styles.title}>
             {titleWords.map((word, i) => (
               <span key={i} className={styles.wordWrap}>
-                <motion.span
-                  className={styles.word}
-                  initial={{ y: '110%' }}
-                  animate={isInView ? { y: '0%' } : {}}
-                  transition={{
-                    duration: 0.7,
-                    delay: 0.3 + i * 0.05,
-                    ease: [0.33, 1, 0.68, 1],
-                  }}
+                <span
+                  className={`${styles.word} ${isInView ? styles.wordVisible : ''}`}
+                  style={{ transitionDelay: `${0.3 + i * 0.05}s` }}
                 >
                   {word}
-                </motion.span>
+                </span>
               </span>
             ))}
             <br />
             {highlightWords.map((word, i) => (
               <span key={i} className={styles.wordWrap}>
-                <motion.span
-                  className={`${styles.word} ${styles.highlight}`}
-                  initial={{ y: '110%' }}
-                  animate={isInView ? { y: '0%' } : {}}
-                  transition={{
-                    duration: 0.7,
-                    delay: 0.3 + (titleWords.length + i) * 0.05,
-                    ease: [0.33, 1, 0.68, 1],
-                  }}
+                <span
+                  className={`${styles.word} ${styles.highlight} ${isInView ? styles.wordVisible : ''}`}
+                  style={{ transitionDelay: `${0.3 + (titleWords.length + i) * 0.05}s` }}
                 >
                   {word}
-                </motion.span>
+                </span>
               </span>
             ))}
           </h1>
 
-          <motion.p
-            className={styles.subtitle}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          <p
+            className={`${styles.subtitle} ${isInView ? styles.subtitleVisible : ''}`}
           >
             A Faenza, in provincia di Ravenna, siamo il punto di riferimento
             dal 2016 per automobilisti e camperisti.
-          </motion.p>
+          </p>
 
-          <motion.div
-            className={styles.actions}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          <div
+            className={`${styles.actions} ${isInView ? styles.actionsVisible : ''}`}
           >
             <Link href="/contatti" className={styles.btnPrimary}>
               <Phone size={17} />
@@ -101,13 +92,10 @@ export function Hero() {
               I nostri servizi
               <ArrowRight size={17} className={styles.btnArrow} />
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className={styles.stats}
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 1, delay: 1.1 }}
+          <div
+            className={`${styles.stats} ${isInView ? styles.statsVisible : ''}`}
           >
             <div className={styles.stat}>
               <CountUp end={30} suffix="+" className={styles.statNum} duration={2000} />
@@ -123,15 +111,12 @@ export function Hero() {
               <CountUp end={6} suffix="k+" className={styles.statNum} duration={2500} />
               <span className={styles.statLabel}>Clienti soddisfatti</span>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Visual */}
-        <motion.div
-          className={styles.visual}
-          initial={{ opacity: 0, scale: 0.94, y: 30 }}
-          animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-          transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        <div
+          className={`${styles.visual} ${isInView ? styles.visualVisible : ''}`}
         >
           <div className={styles.imageFrame}>
             <Image
@@ -145,11 +130,8 @@ export function Hero() {
             <div className={styles.imageShine} />
           </div>
 
-          <motion.div
-            className={styles.floatingCard}
-            initial={{ opacity: 0, y: 30, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-            transition={{ duration: 0.7, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          <div
+            className={`${styles.floatingCard} ${isInView ? styles.floatingCardVisible : ''}`}
           >
             <div className={styles.floatingIcon}>
               <ShieldCheck size={20} />
@@ -158,8 +140,8 @@ export function Hero() {
               <p className={styles.floatingTitle}>Qualit&agrave; Garantita</p>
               <p className={styles.floatingSub}>Diagnostica TEXA certificata</p>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

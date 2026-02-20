@@ -1,9 +1,5 @@
-'use client';
-
-import type React from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import { motion } from 'motion/react';
 import styles from './PageHero.module.css';
 
 interface Breadcrumb {
@@ -28,13 +24,9 @@ export function PageHero({ title, subtitle, breadcrumbs, accent = 'red' }: PageH
       />
 
       <div className={styles.content}>
-        <motion.nav
+        <nav
           className={styles.breadcrumbs}
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
           aria-label="Breadcrumb"
-          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
         >
           {breadcrumbs.map((crumb, i) => (
             <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -48,28 +40,16 @@ export function PageHero({ title, subtitle, breadcrumbs, accent = 'red' }: PageH
               )}
             </span>
           ))}
-        </motion.nav>
+        </nav>
 
-        <motion.h1
-          className={styles.title}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
-        >
+        <h1 className={styles.title}>
           {title}
-        </motion.h1>
+        </h1>
 
         {subtitle && (
-          <motion.p
-            className={styles.subtitle}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
-          >
+          <p className={styles.subtitle}>
             {subtitle}
-          </motion.p>
+          </p>
         )}
       </div>
 
