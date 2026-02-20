@@ -1,6 +1,3 @@
-'use client';
-
-import { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, ArrowRight, ShieldCheck } from 'lucide-react';
@@ -11,41 +8,18 @@ const titleWords = ['Oltre', "trent'anni", 'di', 'esperienza', 'al', 'servizio']
 const highlightWords = ['dei', 'vostri', 'veicoli'];
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '-10%' },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className={styles.hero} ref={ref}>
+    <section className={styles.hero}>
       {/* Animated background elements */}
       <div className={styles.bgGrid} />
       <div className={styles.bgGlow1} />
       <div className={styles.bgGlow2} />
-      <div
-        className={`${styles.bgLine} ${isInView ? styles.bgLineVisible : ''}`}
-      />
+      <div className={styles.bgLine} />
 
       <div className={styles.inner}>
         {/* Content */}
         <div className={styles.content}>
-          <span
-            className={`${styles.eyebrow} ${isInView ? styles.eyebrowVisible : ''}`}
-          >
+          <span className={styles.eyebrow}>
             <span className={styles.eyebrowLine} />
             Autofficina Romauto — Faenza
           </span>
@@ -54,8 +28,8 @@ export function Hero() {
             {titleWords.map((word, i) => (
               <span key={i} className={styles.wordWrap}>
                 <span
-                  className={`${styles.word} ${isInView ? styles.wordVisible : ''}`}
-                  style={{ transitionDelay: `${0.3 + i * 0.05}s` }}
+                  className={styles.word}
+                  style={{ animationDelay: `${0.3 + i * 0.05}s` }}
                 >
                   {word}
                 </span>
@@ -65,8 +39,8 @@ export function Hero() {
             {highlightWords.map((word, i) => (
               <span key={i} className={styles.wordWrap}>
                 <span
-                  className={`${styles.word} ${styles.highlight} ${isInView ? styles.wordVisible : ''}`}
-                  style={{ transitionDelay: `${0.3 + (titleWords.length + i) * 0.05}s` }}
+                  className={`${styles.word} ${styles.highlight}`}
+                  style={{ animationDelay: `${0.3 + (titleWords.length + i) * 0.05}s` }}
                 >
                   {word}
                 </span>
@@ -74,16 +48,12 @@ export function Hero() {
             ))}
           </h1>
 
-          <p
-            className={`${styles.subtitle} ${isInView ? styles.subtitleVisible : ''}`}
-          >
+          <p className={styles.subtitle}>
             A Faenza, in provincia di Ravenna, siamo il punto di riferimento
             dal 2016 per automobilisti e camperisti.
           </p>
 
-          <div
-            className={`${styles.actions} ${isInView ? styles.actionsVisible : ''}`}
-          >
+          <div className={styles.actions}>
             <Link href="/contatti" className={styles.btnPrimary}>
               <Phone size={17} />
               Contattaci
@@ -94,9 +64,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <div
-            className={`${styles.stats} ${isInView ? styles.statsVisible : ''}`}
-          >
+          <div className={styles.stats}>
             <div className={styles.stat}>
               <CountUp end={30} suffix="+" className={styles.statNum} duration={2000} />
               <span className={styles.statLabel}>Anni di esperienza</span>
@@ -115,9 +83,7 @@ export function Hero() {
         </div>
 
         {/* Visual */}
-        <div
-          className={`${styles.visual} ${isInView ? styles.visualVisible : ''}`}
-        >
+        <div className={styles.visual}>
           <div className={styles.imageFrame}>
             <Image
               src="/hero.jpg"
@@ -130,9 +96,7 @@ export function Hero() {
             <div className={styles.imageShine} />
           </div>
 
-          <div
-            className={`${styles.floatingCard} ${isInView ? styles.floatingCardVisible : ''}`}
-          >
+          <div className={styles.floatingCard}>
             <div className={styles.floatingIcon}>
               <ShieldCheck size={20} />
             </div>
