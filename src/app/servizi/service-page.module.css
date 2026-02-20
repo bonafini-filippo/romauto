@@ -33,16 +33,10 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   min-height: 300px;
-  transform: translateZ(0);
-  /* Force Hardware Acceleration */
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.introVisual img {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  isolation: isolate;
+  /* Safari border-radius + transform glitch fix */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
 }
 
 /* Visual placeholder with diagonal stripe overlay */

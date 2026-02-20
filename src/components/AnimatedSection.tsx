@@ -1,6 +1,7 @@
 'use client';
 
-import { motion, type Variants } from 'motion/react';
+import { useRef } from 'react';
+import { motion, useInView, type Variants } from 'motion/react';
 import { fadeUp } from '@/lib/animations';
 
 interface AnimatedSectionProps {
@@ -16,14 +17,18 @@ export function AnimatedSection({
   className,
   delay = 0,
 }: AnimatedSectionProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-10%' });
+
   return (
     <motion.div
+      ref={ref}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-10%' }}
+      animate={isInView ? 'visible' : 'hidden'}
       variants={variants}
       className={className}
       transition={delay ? { delay } : undefined}
+      style={{ willChange: 'auto' }} // Helps prevent Safari memory glitches
     >
       {children}
     </motion.div>
