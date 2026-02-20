@@ -72,7 +72,7 @@ export default function ElettrautoPage() {
             <AnimatedSection variants={fadeRight}>
               <div className={styles.introVisual}>
                 <Image
-                  src="/images/servizi/elettrauto.png"
+                  src="/elettrauto.png"
                   alt="Elettrauto Diagnosi"
                   fill
                   style={{ objectFit: 'cover' }}

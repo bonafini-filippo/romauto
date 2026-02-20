@@ -71,7 +71,7 @@ export default function GommistaPage() {
             <AnimatedSection variants={fadeRight}>
               <div className={styles.introVisual}>
                 <Image
-                  src="/images/servizi/gommista.png"
+                  src="/gomme.png"
                   alt="Gommista Riparazione"
                   fill
                   style={{ objectFit: 'cover' }}

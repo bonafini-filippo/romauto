@@ -64,7 +64,7 @@ export default function ServizioCamperPage() {
             <AnimatedSection variants={fadeRight}>
               <div className={styles.introVisual}>
                 <Image
-                  src="/images/servizi/camper.png"
+                  src="/camper.png"
                   alt="Servizio Camper"
                   fill
                   style={{ objectFit: 'cover' }}

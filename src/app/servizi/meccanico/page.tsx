@@ -74,7 +74,7 @@ export default function MeccanicoPage() {
             <AnimatedSection variants={fadeRight}>
               <div className={styles.introVisual}>
                 <Image
-                  src="/images/servizi/meccanico.png"
+                  src="/meccanico.png"
                   alt="Meccanico Auto"
                   fill
                   style={{ objectFit: 'cover' }}
