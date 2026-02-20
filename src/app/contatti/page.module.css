@@ -1,0 +1,140 @@
+.section {
+  padding: var(--section-py) 24px;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.introText {
+  font-size: 1.02rem;
+  color: var(--text-body);
+  line-height: 1.8;
+}
+
+.servicesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.serviceTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--bg-section-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-body);
+}
+
+/* Contact cards with left red border */
+.contactCards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-lighter);
+  border-left: 3px solid var(--color-red);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.contactCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Card icon with glow on hover */
+.cardIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: var(--color-red);
+  transition: box-shadow var(--transition-fast);
+}
+
+.contactCard:hover .cardIcon {
+  box-shadow: 0 0 16px rgba(196, 30, 36, 0.4), 0 0 4px rgba(196, 30, 36, 0.3);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.cardValue {
+  font-size: 0.95rem;
+  color: var(--text-heading);
+  line-height: 1.5;
+}
+
+.cardLink {
+  color: var(--text-heading);
+  transition: color var(--transition-fast);
+}
+
+.cardLink:hover {
+  color: var(--color-red);
+}
+
+/* Map section with title */
+.mapSection {
+  padding: 0 24px 80px;
+}
+
+.mapContainer {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.mapTitle {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

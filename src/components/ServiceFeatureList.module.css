@@ -1,0 +1,99 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 28px;
+  background: var(--bg-white);
+  border: 1px solid var(--border-lighter);
+  border-radius: var(--radius-xl);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  /* Generic shadow for all */
+}
+
+/* Red / Blue Border Hover */
+.item:has(.iconRed):hover {
+  border-color: var(--color-red-light);
+}
+
+.item:has(.iconBlue):hover {
+  border-color: var(--color-blue-light);
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Initial Tint Backgrounds */
+.iconWrapper:has(.iconRed) {
+  background: var(--color-red-light);
+}
+
+.iconWrapper:has(.iconBlue) {
+  background: var(--color-blue-light);
+}
+
+/* Hover Solid Backgrounds */
+.item:hover .iconWrapper:has(.iconRed) {
+  background: var(--color-red);
+  transform: scale(1.05);
+}
+
+.item:hover .iconWrapper:has(.iconBlue) {
+  background: var(--color-blue);
+  transform: scale(1.05);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Initial Icon Colors */
+.iconRed {
+  color: var(--color-red);
+}
+
+.iconBlue {
+  color: var(--color-blue);
+}
+
+/* Hover Icon Colors - White */
+.item:hover .iconRed,
+.item:hover .iconBlue {
+  color: #fff;
+}
+
+.text {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--text-heading);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,190 @@
+.section {
+  padding: 0 24px var(--section-py);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* Outer dark card that contains both panels */
+.card {
+  background: var(--bg-dark);
+  border-radius: var(--radius-2xl);
+  padding: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Panels ─────────────────────────────────────── */
+.panelBlue,
+.panelRed {
+  border-radius: var(--radius-xl);
+  padding: 40px;
+}
+
+.panelBlue {
+  background: linear-gradient(145deg, #1B3A5F 0%, #15304F 60%, #1B3A5F 100%);
+}
+
+.panelRed {
+  background: var(--color-red);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── Tag ────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 12px;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  margin-bottom: 20px;
+}
+
+/* ── Heading with icon ──────────────────────────── */
+.panelHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.panelIcon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.panelTitle {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.panelTitleLg {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+/* ── Text ───────────────────────────────────────── */
+.panelText {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.65;
+  max-width: 420px;
+}
+
+/* ── Buttons ────────────────────────────────────── */
+.linkBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 12px 24px;
+  background: #fff;
+  color: var(--color-blue);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-md);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.linkBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.btnWhite {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #fff;
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-md);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btnWhite:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-md);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btnOutline:hover {
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panelBlue,
+  .panelRed {
+    padding: 28px 24px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btnWhite,
+  .btnOutline {
+    justify-content: center;
+    width: 100%;
+  }
+}

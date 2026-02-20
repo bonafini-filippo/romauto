@@ -1,0 +1,154 @@
+.section {
+  padding: var(--section-py) 24px;
+}
+
+.sectionAlt {
+  background: var(--bg-section-alt);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.introText {
+  font-size: 1.02rem;
+  color: var(--text-body);
+  line-height: 1.8;
+}
+
+.introText p + p {
+  margin-top: 14px;
+}
+
+.introVisual {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 300px;
+}
+
+/* Visual placeholder with diagonal stripe overlay */
+.visualPlaceholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.visualPlaceholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.03) 10px,
+    rgba(255, 255, 255, 0.03) 20px
+  );
+  pointer-events: none;
+}
+
+.placeholderRed {
+  background: linear-gradient(135deg, #1B3A5F 0%, #243B55 60%, #1B3A5F 100%);
+}
+
+.placeholderBlue {
+  background: linear-gradient(135deg, #1a2332 0%, #1B3A5F 60%, #243B55 100%);
+}
+
+/* Vehicle tags with red dot before text */
+.vehicleList {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.vehicleTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  background: var(--bg-section-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--text-body);
+}
+
+.vehicleTag::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-red);
+  flex-shrink: 0;
+}
+
+/* Also section */
+.alsoSection {
+  margin-top: 40px;
+}
+
+.alsoTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-heading);
+}
+
+.alsoList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  counter-reset: also-counter;
+}
+
+/* Numbered circles instead of check icons */
+.alsoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.5;
+  counter-increment: also-counter;
+}
+
+.alsoIcon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-red-light);
+  color: var(--color-red);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+@media (max-width: 768px) {
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

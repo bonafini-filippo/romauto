@@ -1,0 +1,223 @@
+/* ── Footer shell ────────────────────────────────── */
+.footer {
+  background-color: var(--bg-dark);
+  padding: 48px 24px 32px;
+}
+
+.footerInner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  padding-top: 32px;
+}
+
+/* ── Brand column ────────────────────────────────── */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brandLogo {
+  height: 36px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  object-position: left;
+}
+
+.brandDescription {
+  font-size: 0.85rem;
+  color: var(--text-on-dark-muted);
+  line-height: 1.7;
+  max-width: 260px;
+}
+
+/* ── Social links row ────────────────────────────── */
+.socialRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--bg-dark-card);
+  color: var(--text-on-dark-muted);
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.socialLink:hover {
+  color: #fff;
+  background: var(--color-red);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(196, 30, 36, 0.4);
+}
+
+/* ── Column ──────────────────────────────────────── */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.columnTitle {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-on-dark);
+  border-bottom: none;
+  margin-bottom: 8px;
+}
+
+.columnLink {
+  font-size: 0.88rem;
+  color: var(--text-on-dark-muted);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  display: inline-block;
+}
+
+.columnLink::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-red);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(-50%);
+}
+
+.columnLink:hover {
+  color: #fff;
+  transform: translateX(8px);
+}
+
+.columnLink:hover::before {
+  width: 8px;
+}
+
+/* ── Contact items ─────────────────────────────── */
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-on-dark-muted);
+  padding: 6px 8px;
+  margin: -6px -8px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.contactItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contactIcon {
+  color: var(--color-red);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.contactLink {
+  color: var(--text-on-dark-muted);
+  transition: color var(--transition-fast);
+}
+
+.contactLink:hover {
+  color: #fff;
+}
+
+/* ── Bottom bar ──────────────────────────────────── */
+.bottom {
+  max-width: var(--container-width);
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copyright {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Legal links with dot separator ──────────────── */
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legalDot {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.legalLink {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.legalLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: width 0.3s ease;
+}
+
+.legalLink:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.legalLink:hover::after {
+  width: 100%;
+}
+
+/* ── Mobile ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footerInner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .socialRow {
+    justify-content: center;
+  }
+}

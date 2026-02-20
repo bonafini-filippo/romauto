@@ -1,0 +1,169 @@
+/* ── Immersive overlay card ──────────────────────── */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 380px;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ── Full background image ──────────────────────── */
+.bg {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .bg {
+  transform: scale(1.06);
+}
+
+/* ── Gradient overlay ───────────────────────────── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    rgba(0, 0, 0, 0.1) 70%,
+    transparent 100%
+  );
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .overlay {
+  opacity: 0.95;
+}
+
+/* ── Icon badge ─────────────────────────────────── */
+.iconBadge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .iconBadge {
+  background: var(--color-red);
+  border-color: var(--color-red);
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(196, 30, 36, 0.4);
+}
+
+/* ── Content at bottom ──────────────────────────── */
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 28px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 0;
+  transition: margin 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .title {
+  margin-bottom: 12px;
+}
+
+/* Description — hidden by default, reveals on hover */
+.description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .description {
+  max-height: 80px;
+  opacity: 1;
+}
+
+/* Link — hidden, reveals on hover */
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-red);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+
+.card:hover .link {
+  max-height: 40px;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+.arrow {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .card {
+    height: 300px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  /* Always show description on mobile (no hover) */
+  .description {
+    max-height: 80px;
+    opacity: 1;
+    margin-top: 8px;
+  }
+
+  .link {
+    max-height: 40px;
+    opacity: 1;
+    margin-top: 12px;
+  }
+
+  .card:hover .title {
+    margin-bottom: 0;
+  }
+}
