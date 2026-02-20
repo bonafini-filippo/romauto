@@ -1,5 +1,6 @@
 'use client';
 
+import type React from 'react';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -33,6 +34,7 @@ export function PageHero({ title, subtitle, breadcrumbs, accent = 'red' }: PageH
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           aria-label="Breadcrumb"
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
         >
           {breadcrumbs.map((crumb, i) => (
             <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -53,6 +55,7 @@ export function PageHero({ title, subtitle, breadcrumbs, accent = 'red' }: PageH
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
         >
           {title}
         </motion.h1>
@@ -63,6 +66,7 @@ export function PageHero({ title, subtitle, breadcrumbs, accent = 'red' }: PageH
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
           >
             {subtitle}
           </motion.p>

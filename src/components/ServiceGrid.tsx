@@ -1,5 +1,6 @@
 'use client';
 
+import type React from 'react';
 import { motion } from 'motion/react';
 import { SERVICES } from '@/lib/services';
 import { stagger, fadeUp } from '@/lib/animations';
@@ -16,7 +17,7 @@ export function ServiceGrid() {
       variants={stagger}
     >
       {SERVICES.map((service) => (
-        <motion.div key={service.slug} variants={fadeUp}>
+        <motion.div key={service.slug} variants={fadeUp} style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}>
           <ServiceCard service={service} />
         </motion.div>
       ))}

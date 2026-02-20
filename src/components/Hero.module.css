@@ -134,6 +134,8 @@
 .word {
   display: inline-block;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .highlight {
@@ -266,6 +268,8 @@
 /* ---- Visual ---- */
 .visual {
   position: relative;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .imageFrame {

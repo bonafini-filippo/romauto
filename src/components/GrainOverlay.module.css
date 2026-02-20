@@ -9,6 +9,12 @@
   background-size: 256px 256px;
 }
 
+@media (max-width: 768px) {
+  .grain {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .grain {
     display: none;

@@ -28,7 +28,11 @@ export function AnimatedSection({
       variants={variants}
       className={className}
       transition={delay ? { delay } : undefined}
-      style={{ willChange: 'auto' }} // Helps prevent Safari memory glitches
+      style={{
+        willChange: 'auto',
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+      } as React.CSSProperties}
     >
       {children}
     </motion.div>

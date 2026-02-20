@@ -1,5 +1,6 @@
 'use client';
 
+import type React from 'react';
 import { Check } from 'lucide-react';
 import { motion } from 'motion/react';
 import { stagger, fadeUp } from '@/lib/animations';
@@ -27,6 +28,7 @@ export function ServiceFeatureList({
           key={i}
           className={styles.item}
           variants={fadeUp}
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}
         >
           <div className={styles.iconWrapper}>
             <div

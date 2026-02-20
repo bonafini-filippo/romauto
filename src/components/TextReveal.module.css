@@ -17,4 +17,6 @@
 .word {
   display: inline-block;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import type React from 'react';
 import { motion } from 'motion/react';
 import { CircleDot } from 'lucide-react';
 import { stagger, fadeUp } from '@/lib/animations';
@@ -29,7 +30,7 @@ export function BrandLogos() {
           variants={stagger}
         >
           {BRANDS.map((brand) => (
-            <motion.div key={brand} className={styles.brand} variants={fadeUp}>
+            <motion.div key={brand} className={styles.brand} variants={fadeUp} style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}>
               <CircleDot size={28} className={styles.brandIcon} />
               <span className={styles.separator} />
               <span className={styles.brandName}>{brand}</span>

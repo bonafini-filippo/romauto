@@ -395,4 +395,14 @@
   .logoImage {
     height: 38px;
   }
+
+  .solid {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .mobileBackdrop {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
 }

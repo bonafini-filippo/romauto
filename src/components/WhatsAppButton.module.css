@@ -14,6 +14,8 @@
   box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   animation: pulse 2s infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .whatsapp:hover {
