@@ -6,16 +6,17 @@ import { AnimatedSection } from '@/components/AnimatedSection';
 import { SectionHeading } from '@/components/SectionHeading';
 import { ServiceFeatureList } from '@/components/ServiceFeatureList';
 import { BottomCTA } from '@/components/BottomCTA';
-import { createMetadata } from '@/lib/metadata';
 import { fadeLeft, fadeRight } from '@/lib/animations';
 import styles from '../service-page.module.css';
 
-export const metadata: Metadata = createMetadata({
+export const metadata: Metadata = {
   title: 'Meccanico',
-  description:
-    'Riparazioni meccaniche, tagliandi e manutenzione per auto, furgoni e camper a Faenza. Esperienza trentennale, servizio auto di cortesia.',
-  path: '/servizi/meccanico',
-});
+  description: 'Riparazioni meccaniche, tagliandi omologati multimarca e manutenzione per auto, furgoni e camper a Faenza. Esperienza trentennale.',
+  openGraph: {
+    title: 'Meccanico Faenza | Autofficina Romauto',
+    description: 'Tagliandi di manutenzione, ripristino impianto frenante ed esperienza trentennale. Affidati ai professionisti a Faenza.',
+  }
+};
 
 const FEATURES = [
   'Tagliandi di manutenzione periodica omologati multimarca',
@@ -87,7 +88,7 @@ export default function MeccanicoPage() {
       </section>
 
       {/* Features */}
-      <section className={`${styles.section} ${styles.sectionAlt}`}>
+      <section className={`${styles.section} ${styles.sectionAlt} `}>
         <div className={styles.container}>
           <AnimatedSection>
             <SectionHeading

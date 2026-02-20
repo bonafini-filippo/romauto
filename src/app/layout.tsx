@@ -25,25 +25,43 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: 'Autofficina Romauto | Meccanico, Elettrauto, Gommista a Faenza',
-    template: '%s | Autofficina Romauto',
+    template: '%s | Autofficina Romauto | Faenza, Ravenna',
   },
   description:
-    'Autofficina Romauto a Faenza (RA): meccanico, elettrauto, gommista e servizio camper. Oltre 30 anni di esperienza. Diagnosi TEXA, tagliandi, ricambi auto.',
+    'Autofficina Romauto a Faenza (RA). Dal 2016 il punto di riferimento per automobilisti e camperisti. Servizi di Meccanico, Elettrauto, Gommista e Ricambi.',
   keywords: [
-    'autofficina faenza',
-    'meccanico faenza',
-    'elettrauto faenza',
-    'gommista faenza',
-    'officina camper faenza',
-    'tagliando auto faenza',
-    'ricambi auto faenza',
-    'romauto',
+    'Autofficina Faenza',
+    'Meccanico Faenza',
+    'Elettrauto Faenza',
+    'Gommista Faenza',
+    'Servizio Camper',
+    'Ricambi Auto Faenza',
+    'Tagliando Faenza',
+    'Revisioni Faenza',
+    'Ravenna',
+    'Romauto',
   ],
+  authors: [{ name: 'Damiano Romanelli' }],
+  creator: 'Autofficina Romauto',
+  publisher: 'Autofficina Romauto',
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
     locale: 'it_IT',
     siteName: 'Autofficina Romauto',
+    title: 'Autofficina Romauto | Servizi per Auto e Camper a Faenza',
+    description: 'Il tuo riferimento a Faenza (RA) per Meccanico, Elettrauto, Gommista e Riparazione Camper. Scopri i nostri servizi.',
+    url: 'https://www.autofficinaromauto.it/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Autofficina Romauto | Faenza',
+    description: 'Esperti in riparazioni auto, elettrauto e cambio gomme a Faenza.',
+  },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/favicon.ico',
+    apple: '/icon.png',
   },
 };
 

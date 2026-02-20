@@ -12,7 +12,7 @@ import styles from './page.module.css';
 export const metadata: Metadata = createMetadata({
   title: 'Ricambi Auto',
   description:
-    'Ricambi auto a Faenza: ricambi originali OEM, aftermarket, rigenerati e usati per auto, furgoni, camper e autocaravan.',
+    'Ricambi auto a Faenza: articoli di ricambio originali (OEM), aftermarket, rigenerati e usati per auto, furgoni, camper e autocaravan.',
   path: '/ricambi-auto',
 });
 

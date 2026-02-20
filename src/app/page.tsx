@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'La tua Autofficina a Faenza',
+  description: 'Scopri i servizi di Autofficina Romauto a Faenza: meccanico, elettrauto, gommista e assistenza camper. Attrezzature diagnostiche TEXA all\'avanguardia.',
+  openGraph: {
+    title: 'La tua Autofficina a Faenza | Romauto',
+    description: 'Autofficina Romauto offre servizi eccellenti per la cura della tua auto e camper a Faenza. Prenota un appuntamento.',
+  }
+};
 import {
   Wrench,
   ClipboardCheck,

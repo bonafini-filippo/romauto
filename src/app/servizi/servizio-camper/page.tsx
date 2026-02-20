@@ -12,7 +12,7 @@ import styles from '../service-page.module.css';
 export const metadata: Metadata = createMetadata({
   title: 'Servizio Camper',
   description:
-    'Servizio camper a Faenza: manutenzione, revisione, installazione accessori per camper e autocaravan. Da oltre 10 anni punto di riferimento per camperisti.',
+    'Servizio camper e autocaravan a Faenza: tagliando, revisione, cambio gomme e installazione accessori (telecamere, antifurto, sensori).',
   path: '/servizi/servizio-camper',
 });
 

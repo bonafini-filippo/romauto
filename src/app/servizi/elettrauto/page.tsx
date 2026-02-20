@@ -12,7 +12,7 @@ import styles from '../service-page.module.css';
 export const metadata: Metadata = createMetadata({
   title: 'Elettrauto',
   description:
-    'Servizi di elettrauto a Faenza: diagnosi computerizzata TEXA, impianti elettrici, climatizzazione, sanificazione. Esperti nella diagnosi elettronica.',
+    'Elettrauto a Faenza: diagnosi elettronica TEXA, climatizzazione, sanificazione e sostituzione parti elettriche. Tempi rapidi e apparecchiature innovative.',
   path: '/servizi/elettrauto',
 });
 

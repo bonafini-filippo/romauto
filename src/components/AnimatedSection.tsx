@@ -20,7 +20,7 @@ export function AnimatedSection({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: '-10%' }}
       variants={variants}
       className={className}
       transition={delay ? { delay } : undefined}

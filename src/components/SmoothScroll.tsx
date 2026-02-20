@@ -5,19 +5,29 @@ import Lenis from 'lenis';
 
 export function SmoothScroll() {
   useEffect(() => {
+    // Disable custom scroll hijacking on mobile to prevent jank
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      touchMultiplier: 2,
     });
+
+    let rafId: number;
 
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+    };
   }, []);
 
   return null;

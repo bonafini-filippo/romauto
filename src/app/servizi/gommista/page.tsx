@@ -14,7 +14,7 @@ import styles from '../service-page.module.css';
 export const metadata: Metadata = createMetadata({
   title: 'Gommista',
   description:
-    'Gommista a Faenza: vendita, riparazione e sostituzione pneumatici Michelin, Pirelli, Continental, Bridgestone per auto, furgoni, camper e trattori.',
+    'Gommista a Faenza dal 2016 per auto, furgoni, camper e trattori. Vendita, riparazione e cambio gomme Michelin, Pirelli, Continental e Bridgestone.',
   path: '/servizi/gommista',
 });
 
