@@ -1,0 +1,110 @@
+/* ── Legal page typography ─────────────────────── */
+.legal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.legal h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-top: 40px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-red-light);
+}
+
+.legal h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal p {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.legal ul {
+  margin: 8px 0 16px;
+  padding-left: 24px;
+  list-style: disc;
+}
+
+.legal ul li {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 4px;
+}
+
+.legal strong {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.legal a {
+  color: var(--color-red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition-fast);
+}
+
+.legal a:hover {
+  color: var(--color-red-hover);
+}
+
+.lastUpdate {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ── Cookie table ─────────────────────────────── */
+.cookieTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 0.85rem;
+}
+
+.cookieTable th,
+.cookieTable td {
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid var(--border-light);
+}
+
+.cookieTable th {
+  background: var(--bg-section-alt);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-heading);
+}
+
+.cookieTable td {
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .legal {
+    padding: 40px 16px 60px;
+  }
+
+  .cookieTable {
+    font-size: 0.78rem;
+  }
+
+  .cookieTable th,
+  .cookieTable td {
+    padding: 8px 10px;
+  }
+}

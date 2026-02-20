@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
+import Link from 'next/link';
 import { Send, User, Mail, Phone, MessageSquare, Loader2 } from 'lucide-react';
 import styles from './ContactForm.module.css';
 
@@ -15,6 +16,7 @@ interface FormErrors {
   nome?: string;
   email?: string;
   messaggio?: string;
+  privacy?: string;
 }
 
 export function ContactForm() {
@@ -24,6 +26,7 @@ export function ContactForm() {
     telefono: '',
     messaggio: '',
   });
+  const [privacy, setPrivacy] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
@@ -37,6 +40,7 @@ export function ContactForm() {
       errs.email = 'Inserisci un indirizzo email valido';
     }
     if (!data.messaggio.trim()) errs.messaggio = 'Il messaggio è obbligatorio';
+    if (!privacy) errs.privacy = 'Devi accettare la Privacy Policy per inviare il messaggio';
     return errs;
   }
 
@@ -134,6 +138,27 @@ export function ContactForm() {
         {errors.messaggio && (
           <span className={styles.error}>{errors.messaggio}</span>
         )}
+      </div>
+
+      <div className={styles.checkboxField}>
+        <label className={styles.checkboxLabel}>
+          <input
+            type="checkbox"
+            className={styles.checkbox}
+            checked={privacy}
+            onChange={(e) => setPrivacy(e.target.checked)}
+          />
+          <span className={styles.checkboxCustom} aria-hidden="true" />
+          <span className={styles.checkboxText}>
+            Ho letto e accetto la{' '}
+            <Link href="/privacy-policy" target="_blank" className={styles.privacyLink}>
+              Privacy Policy
+            </Link>{' '}
+            e acconsento al trattamento dei miei dati personali ai sensi dell&apos;art. 13 del GDPR
+            <span className={styles.required}> *</span>
+          </span>
+        </label>
+        {errors.privacy && <span className={styles.error}>{errors.privacy}</span>}
       </div>
 
       <button type="submit" className={styles.submit} disabled={sending}>

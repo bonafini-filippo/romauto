@@ -6,6 +6,8 @@ import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { SmoothScroll } from '@/components/SmoothScroll';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { GrainOverlay } from '@/components/GrainOverlay';
+import { CookieConsentProvider } from '@/context/CookieConsentContext';
+import { CookieBanner } from '@/components/CookieBanner';
 import './globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -73,13 +75,16 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body className={`${spaceGrotesk.variable} ${inter.variable}`}>
-        <SmoothScroll />
-        <ScrollProgress />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <GrainOverlay />
+        <CookieConsentProvider>
+          <SmoothScroll />
+          <ScrollProgress />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <WhatsAppButton />
+          <GrainOverlay />
+          <CookieBanner />
+        </CookieConsentProvider>
       </body>
     </html>
   );

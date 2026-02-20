@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { BUSINESS, NAV_ITEMS } from '@/lib/constants';
 import { SERVICES } from '@/lib/services';
+import { CookieSettingsButton } from './CookieSettingsButton';
 import styles from './Footer.module.css';
 
 export function Footer() {
@@ -121,6 +122,8 @@ export function Footer() {
             <Link href="/cookie-policy" className={styles.legalLink}>
               Cookie Policy
             </Link>
+            <span className={styles.legalDot} aria-hidden="true" />
+            <CookieSettingsButton />
           </div>
         </div>
       </footer>
