@@ -83,6 +83,7 @@ export default function Home() {
                     fill
                     className={styles.aboutImage}
                     sizes="(max-width: 768px) 100vw, 40vw"
+                    priority
                   />
                 </div>
                 <div className={styles.aboutStatCard}>
@@ -206,6 +207,7 @@ export default function Home() {
                     fill
                     className={styles.texaImg}
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
                   />
                 </div>
               </div>

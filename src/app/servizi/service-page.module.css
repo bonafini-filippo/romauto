@@ -24,7 +24,7 @@
   line-height: 1.8;
 }
 
-.introText p + p {
+.introText p+p {
   margin-top: 14px;
 }
 
@@ -33,6 +33,16 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   min-height: 300px;
+  transform: translateZ(0);
+  /* Force Hardware Acceleration */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.introVisual img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Visual placeholder with diagonal stripe overlay */
@@ -50,13 +60,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 10px,
-    rgba(255, 255, 255, 0.03) 10px,
-    rgba(255, 255, 255, 0.03) 20px
-  );
+  background: repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.03) 10px,
+      rgba(255, 255, 255, 0.03) 20px);
   pointer-events: none;
 }
 
