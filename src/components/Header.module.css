@@ -239,11 +239,13 @@
   justify-content: flex-end;
   pointer-events: none;
   visibility: hidden;
+  transition: visibility 0s 0.3s;
 }
 
 .mobileOverlayWrapperOpen {
   pointer-events: auto;
   visibility: visible;
+  transition: visibility 0s 0s;
 }
 
 .mobileBackdrop {
@@ -349,7 +351,7 @@
 .mobileSubmenuWrapper {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.2s ease;
+  transition: grid-template-rows 0.25s ease-out;
 }
 
 .mobileSubmenuWrapperOpen {
@@ -359,15 +361,11 @@
 .mobileSubmenu {
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 16px;
+  padding: 0 0 20px 16px;
   border-left: 2px solid var(--border-lighter);
   margin-left: 10px;
   overflow: hidden;
   min-height: 0;
-}
-
-.mobileSubmenuWrapperOpen .mobileSubmenu {
-  padding-bottom: 20px;
 }
 
 .mobileSubLink {
