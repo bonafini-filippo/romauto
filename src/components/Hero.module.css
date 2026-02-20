@@ -99,6 +99,7 @@
   letter-spacing: 0.12em;
   color: var(--text-muted);
   margin-bottom: 24px;
+  opacity: 0; /* CSS safety net for WAAPI handoff */
 }
 
 .eyebrowLine {
@@ -136,6 +137,7 @@
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transform: translateY(110%); /* CSS safety net for WAAPI handoff */
 }
 
 .highlight {
@@ -148,12 +150,14 @@
   max-width: 460px;
   line-height: 1.7;
   margin-bottom: 36px;
+  opacity: 0; /* CSS safety net for WAAPI handoff */
 }
 
 /* ---- CTA Buttons with premium hover ---- */
 .actions {
   display: flex;
   gap: 14px;
+  opacity: 0; /* CSS safety net for WAAPI handoff */
 }
 
 .btnPrimary {
@@ -231,6 +235,7 @@
   margin-top: 48px;
   padding-top: 32px;
   border-top: 1px solid var(--border-lighter);
+  opacity: 0; /* CSS safety net for WAAPI handoff */
 }
 
 .stat {
@@ -270,6 +275,7 @@
   position: relative;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  opacity: 0; /* CSS safety net for WAAPI handoff */
 }
 
 .imageFrame {

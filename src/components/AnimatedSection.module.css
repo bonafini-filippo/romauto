@@ -1,0 +1,6 @@
+/* CSS safety net: keeps element hidden even when motion removes
+   inline styles during WAAPI animation handoff. Motion's inline
+   opacity:1 or WAAPI animation overrides this after animation. */
+.hidden {
+  opacity: 0;
+}

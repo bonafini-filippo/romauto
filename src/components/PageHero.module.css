@@ -38,6 +38,7 @@
   margin-bottom: 20px;
   font-size: 0.85rem;
   color: var(--text-muted);
+  opacity: 0; /* CSS safety net for WAAPI handoff */
 }
 
 .breadcrumbLink {
@@ -68,6 +69,7 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   margin-bottom: 14px;
+  opacity: 0; /* CSS safety net for WAAPI handoff */
 }
 
 .subtitle {
@@ -75,6 +77,7 @@
   color: var(--text-light);
   max-width: 600px;
   line-height: 1.7;
+  opacity: 0; /* CSS safety net for WAAPI handoff */
 }
 
 /* Simple bottom line */

@@ -17,7 +17,7 @@ export function ServiceGrid() {
       variants={stagger}
     >
       {SERVICES.map((service) => (
-        <motion.div key={service.slug} variants={fadeUp} style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}>
+        <motion.div key={service.slug} className={styles.item} variants={fadeUp} style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' } as React.CSSProperties}>
           <ServiceCard service={service} />
         </motion.div>
       ))}

@@ -19,4 +19,5 @@
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  transform: translateY(100%); /* CSS safety net for WAAPI handoff */
 }
