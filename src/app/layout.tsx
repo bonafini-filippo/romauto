@@ -60,10 +60,6 @@ export const metadata: Metadata = {
     title: 'Autofficina Romauto | Faenza',
     description: 'Esperti in riparazioni auto, elettrauto e cambio gomme a Faenza.',
   },
-  icons: {
-    icon: '/icon.png',
-    apple: '/apple-icon.png',
-  },
 };
 
 export default function RootLayout({
