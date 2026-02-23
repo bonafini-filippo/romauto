@@ -78,7 +78,7 @@ export default function Home() {
               <div className={styles.aboutVisual}>
                 <div className={styles.aboutImageWrap}>
                   <Image
-                    src="/about.jpg"
+                    src="/chi-siamo.webp"
                     alt="Autofficina Romauto - il nostro team al lavoro"
                     fill
                     className={styles.aboutImage}
@@ -202,7 +202,7 @@ export default function Home() {
               <div className={styles.texaVisual}>
                 <div className={styles.texaImageWrap}>
                   <Image
-                    src="/texa-idc5.png"
+                    src="/diagnostica.jpg"
                     alt="Stazione diagnostica TEXA IDC5"
                     fill
                     className={styles.texaImg}

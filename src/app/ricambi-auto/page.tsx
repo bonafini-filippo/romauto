@@ -83,7 +83,7 @@ export default function RicambiAutoPage() {
             <AnimatedSection variants={fadeRight}>
               <div className={styles.introVisual}>
                 <Image
-                  src="/images/servizi/ricambi.png"
+                  src="/ricambi.jpg"
                   alt="Vendita Ricambi Auto"
                   fill
                   style={{ objectFit: 'cover' }}
