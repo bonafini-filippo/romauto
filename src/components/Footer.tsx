@@ -16,12 +16,15 @@ export function Footer() {
           {/* Brand Column */}
           <div className={styles.brand}>
             <Image
-              src="/logo-romauto-full.png"
-              alt="Autofficina Romauto - autofficina, meccanico, elettrauto, gommista"
-              width={200}
-              height={64}
+              src="/logo-romauto.png"
+              alt="Autofficina Romauto"
+              width={180}
+              height={54}
               className={styles.brandLogo}
             />
+            <p className={styles.brandSubtitle}>
+              autofficina, meccanico, elettrauto, gommista
+            </p>
             <p className={styles.brandDescription}>
               Oltre {BUSINESS.experienceYears} anni di esperienza al servizio dei vostri veicoli a Faenza.
             </p>

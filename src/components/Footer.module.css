@@ -21,11 +21,20 @@
 }
 
 .brandLogo {
-  height: 56px;
+  height: 48px;
   width: auto;
-  max-width: 200px;
+  max-width: 180px;
   object-fit: contain;
   object-position: left;
+}
+
+.brandSubtitle {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-on-dark-muted);
+  margin-top: -8px;
 }
 
 .brandDescription {
