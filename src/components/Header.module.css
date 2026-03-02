@@ -42,8 +42,16 @@
 }
 
 .logoImage {
-  height: 48px;
+  height: 56px;
   width: auto;
+}
+
+.logoDesktop {
+  display: block;
+}
+
+.logoMobile {
+  display: none;
 }
 
 .navLinks {
@@ -435,6 +443,14 @@
 
   .logoImage {
     height: 38px;
+  }
+
+  .logoDesktop {
+    display: none;
+  }
+
+  .logoMobile {
+    display: block;
   }
 
   .solid {

@@ -50,14 +50,14 @@ const FEATURES = [
   },
   {
     icon: Gauge,
-    title: 'Sistema TEXA IDC5',
+    title: 'Sistema TEXA IDC6',
     text: 'Ricarica climatizzazione con rilevatore perdite di precisione.',
   },
 ];
 
 const SERVICES = [
   { icon: Wrench, label: 'Riparazioni meccaniche' },
-  { icon: ClipboardCheck, label: 'Revisioni e tagliandi' },
+  { icon: ClipboardCheck, label: 'Pre revisioni e tagliandi' },
   { icon: Zap, label: 'Elettrauto' },
   { icon: CircleDot, label: 'Gommista' },
   { icon: Monitor, label: 'Diagnosi computerizzate' },
@@ -87,7 +87,7 @@ export default function Home() {
                   />
                 </div>
                 <div className={styles.aboutStatCard}>
-                  <span className={styles.aboutStatNum}>30+</span>
+                  <span className={styles.aboutStatNum}>25+</span>
                   <span className={styles.aboutStatLabel}>anni di esperienza</span>
                 </div>
               </div>
@@ -169,11 +169,11 @@ export default function Home() {
               <div className={styles.texaContent}>
                 <span className={styles.texaBadge}>Tecnologia</span>
                 <h2 className={styles.texaTitle}>
-                  Stazione diagnostica TEXA&nbsp;IDC5
+                  Stazione diagnostica TEXA&nbsp;IDC6
                 </h2>
                 <p className={styles.texaText}>
                   A disposizione di tutti i nostri clienti mettiamo il sistema
-                  TEXA IDC5, che oltre a ricaricare velocemente l&apos;impianto
+                  TEXA IDC6, che oltre a ricaricare velocemente l&apos;impianto
                   di climatizzazione della vettura, dispone di un rilevatore di
                   precisione di perdite di gas refrigerante, permettendo una
                   rapida risoluzione dei guasti.
@@ -203,7 +203,7 @@ export default function Home() {
                 <div className={styles.texaImageWrap}>
                   <Image
                     src="/diagnostica.jpg"
-                    alt="Stazione diagnostica TEXA IDC5"
+                    alt="Stazione diagnostica TEXA IDC6"
                     fill
                     className={styles.texaImg}
                     sizes="(max-width: 768px) 100vw, 50vw"

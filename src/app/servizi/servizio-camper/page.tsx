@@ -12,12 +12,12 @@ import styles from '../service-page.module.css';
 export const metadata: Metadata = createMetadata({
   title: 'Servizio Camper',
   description:
-    'Servizio camper e autocaravan a Faenza: tagliando, revisione, cambio gomme e installazione accessori (telecamere, antifurto, sensori).',
+    'Servizio camper e autocaravan a Faenza: tagliando, controllo per revisione, cambio gomme e installazione accessori (telecamere, antifurto, sensori).',
   path: '/servizi/servizio-camper',
 });
 
 const FEATURES = [
-  'Tagliando e revisione camper',
+  'Tagliando e controllo per revisione camper',
   'Sostituzione batterie',
   'Cambio gomme e servizi pneumatici',
   'Installazione telecamera posteriore',
@@ -53,7 +53,7 @@ export default function ServizioCamperPage() {
               <div className={styles.introText}>
                 <p>
                   La nostra officina dispone di spazi e apparecchiature apposite per fornire un
-                  efficace servizio di revisione a camper e caravan.
+                  efficace servizio di controllo per revisione a camper e caravan.
                 </p>
                 <p>
                   Romauto effettua anche servizi di riparazione, sostituzione o montaggio degli

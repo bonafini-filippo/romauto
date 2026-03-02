@@ -53,11 +53,19 @@ export function Header() {
         <nav className={styles.nav}>
           <Link href="/" className={styles.logo}>
             <Image
+              src="/logo-romauto-full.png"
+              alt="Autofficina Romauto - autofficina, meccanico, elettrauto, gommista"
+              width={220}
+              height={70}
+              className={`${styles.logoImage} ${styles.logoDesktop}`}
+              priority
+            />
+            <Image
               src="/logo-romauto.png"
               alt="Autofficina Romauto"
-              width={160}
-              height={48}
-              className={styles.logoImage}
+              width={130}
+              height={39}
+              className={`${styles.logoImage} ${styles.logoMobile}`}
               priority
             />
           </Link>

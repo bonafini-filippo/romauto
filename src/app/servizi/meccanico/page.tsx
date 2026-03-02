@@ -11,17 +11,16 @@ import styles from '../service-page.module.css';
 
 export const metadata: Metadata = {
   title: 'Meccanico',
-  description: 'Riparazioni meccaniche, tagliandi omologati multimarca e manutenzione per auto, furgoni e camper a Faenza. Esperienza trentennale.',
+  description: 'Riparazioni meccaniche, tagliandi omologati multimarca e manutenzione per auto, furgoni e camper a Faenza. Esperienza venticinquennale.',
   openGraph: {
     title: 'Meccanico Faenza | Autofficina Romauto',
-    description: 'Tagliandi di manutenzione, ripristino impianto frenante ed esperienza trentennale. Affidati ai professionisti a Faenza.',
+    description: 'Tagliandi di manutenzione, ripristino impianto frenante ed esperienza venticinquennale. Affidati ai professionisti a Faenza.',
   }
 };
 
 const FEATURES = [
   'Tagliandi di manutenzione periodica omologati multimarca',
   'Azzeramento spia contatore e manutenzione programmata',
-  'Verifica richiami ufficiali delle case costruttrici',
   'Cambio olio e filtro olio',
   'Controllo liquido refrigerante e olio freni',
   'Controllo liquido tergicristallo',
@@ -29,6 +28,8 @@ const FEATURES = [
   'Sostituzione parti meccaniche',
   'Smontaggio, riparazione e montaggio cambio meccanico e automatico',
   'Controllo e ripristino impianto frenante (dischi, tamburi, ganasce)',
+  'Installazione gancio traino',
+  'Sostituzione serbatoio GPL',
 ];
 
 export default function MeccanicoPage() {

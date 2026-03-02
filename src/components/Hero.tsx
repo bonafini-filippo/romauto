@@ -4,7 +4,7 @@ import { Phone, ArrowRight, ShieldCheck } from 'lucide-react';
 import { CountUp } from './CountUp';
 import styles from './Hero.module.css';
 
-const titleWords = ['Oltre', "trent'anni", 'di', 'esperienza', 'al', 'servizio'];
+const titleWords = ['Oltre', 'venticinque', 'anni', 'di', 'esperienza', 'al', 'servizio'];
 const highlightWords = ['dei', 'vostri', 'veicoli'];
 
 export function Hero() {
@@ -66,7 +66,7 @@ export function Hero() {
 
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <CountUp end={30} suffix="+" className={styles.statNum} duration={2000} />
+              <CountUp end={25} suffix="+" className={styles.statNum} duration={2000} />
               <span className={styles.statLabel}>Anni di esperienza</span>
             </div>
             <div className={styles.statDivider} />

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Car, Truck, Caravan, Tractor } from 'lucide-react';
+import { Car, Truck, Caravan } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -14,7 +14,7 @@ import styles from '../service-page.module.css';
 export const metadata: Metadata = createMetadata({
   title: 'Gommista',
   description:
-    'Gommista a Faenza dal 2016 per auto, furgoni, camper e trattori. Vendita, riparazione e cambio gomme Michelin, Pirelli, Continental e Bridgestone.',
+    'Gommista a Faenza dal 2016 per auto, furgoni e camper. Vendita, riparazione e cambio gomme Michelin, Pirelli, Continental e Bridgestone.',
   path: '/servizi/gommista',
 });
 
@@ -23,8 +23,6 @@ const FEATURES = [
   'Cambio gomme stagionale',
   'Riparazione pneumatici',
   'Equilibratura ruote',
-  'Convergenza e assetto ruote',
-  'Deposito gomme stagionale',
   'Consulenza dedicata per la scelta del pneumatico',
 ];
 
@@ -65,7 +63,6 @@ export default function GommistaPage() {
                 <span className={styles.vehicleTag}><Car size={14} /> Auto</span>
                 <span className={styles.vehicleTag}><Truck size={14} /> Furgoni</span>
                 <span className={styles.vehicleTag}><Caravan size={14} /> Camper</span>
-                <span className={styles.vehicleTag}><Tractor size={14} /> Trattori</span>
               </div>
             </AnimatedSection>
             <AnimatedSection variants={fadeRight}>

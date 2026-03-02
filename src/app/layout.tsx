@@ -47,6 +47,10 @@ export const metadata: Metadata = {
   creator: 'Autofficina Romauto',
   publisher: 'Autofficina Romauto',
   robots: { index: true, follow: true },
+  metadataBase: new URL('https://www.autofficinaromauto.it'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'it_IT',
@@ -67,9 +71,53 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AutoRepair',
+    name: 'Autofficina Romauto',
+    image: 'https://www.autofficinaromauto.it/hero.jpg',
+    url: 'https://www.autofficinaromauto.it',
+    telephone: '+390546622686',
+    email: 'romanellid@romauto.org',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Via Vittori, 175',
+      addressLocality: 'Faenza',
+      addressRegion: 'RA',
+      postalCode: '48018',
+      addressCountry: 'IT',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 44.28,
+      longitude: 11.88,
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:30',
+        closes: '12:30',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '14:30',
+        closes: '18:30',
+      },
+    ],
+    priceRange: '$$',
+    description:
+      'Autofficina Romauto a Faenza: meccanico, elettrauto, gommista e servizio camper. Oltre 25 anni di esperienza.',
+  };
+
   return (
     <html lang="it">
       <body className={`${spaceGrotesk.variable} ${inter.variable}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <CookieConsentProvider>
           <SmoothScroll />
           <ScrollProgress />

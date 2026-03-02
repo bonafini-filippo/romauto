@@ -42,7 +42,7 @@ export default function ContattiPage() {
                     title="Come Raggiungerci"
                   />
                   <p className={styles.introText}>
-                    Dall&apos;esperienza ultra trentennale per le quattro ruote nasce Romauto,
+                    Dall&apos;esperienza ultra venticinquennale per le quattro ruote nasce Romauto,
                     il punto di riferimento a Faenza e in tutta la provincia di Ravenna per
                     auto, furgoni, camper e caravan.
                   </p>
@@ -115,8 +115,6 @@ export default function ContattiPage() {
                       <div className={styles.cardTitle}>Orari</div>
                       <div className={styles.cardValue}>
                         {BUSINESS.orari.feriali}
-                        <br />
-                        {BUSINESS.orari.sabato}
                         <br />
                         {BUSINESS.orari.domenica}
                       </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Package, Factory, RefreshCw, Recycle } from 'lucide-react';
+import { Package, Factory, RefreshCw } from 'lucide-react';
 import { PageHero } from '@/components/PageHero';
 import { AnimatedSection } from '@/components/AnimatedSection';
 import { SectionHeading } from '@/components/SectionHeading';
@@ -34,11 +34,6 @@ const PART_TYPES = [
     title: 'Ricambi Rigenerati',
     desc: 'Componenti ricondizionati con elevati standard qualitativi.',
   },
-  {
-    icon: Recycle,
-    title: 'Ricambi Usati',
-    desc: 'Pezzi selezionati e verificati per soluzioni economiche.',
-  },
 ];
 
 export default function RicambiAutoPage() {
@@ -71,7 +66,7 @@ export default function RicambiAutoPage() {
                 </p>
                 <p>
                   Vendita al banco di pezzi di ricambio per auto, furgoni, camper e autocaravan
-                  sia ai nostri clienti.
+                  ai nostri clienti.
                 </p>
               </div>
               <div className={styles.commonParts}>
@@ -83,7 +78,7 @@ export default function RicambiAutoPage() {
             <AnimatedSection variants={fadeRight}>
               <div className={styles.introVisual}>
                 <Image
-                  src="/ricambi.jpg"
+                  src="/ricambi-new.jpg"
                   alt="Vendita Ricambi Auto"
                   fill
                   style={{ objectFit: 'cover' }}

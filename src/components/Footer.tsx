@@ -16,15 +16,14 @@ export function Footer() {
           {/* Brand Column */}
           <div className={styles.brand}>
             <Image
-              src="/logo-romauto.png"
-              alt="Autofficina Romauto"
-              width={140}
-              height={36}
+              src="/logo-romauto-full.png"
+              alt="Autofficina Romauto - autofficina, meccanico, elettrauto, gommista"
+              width={200}
+              height={64}
               className={styles.brandLogo}
             />
             <p className={styles.brandDescription}>
-              Oltre {BUSINESS.experienceYears} anni di esperienza al servizio dei vostri veicoli.
-              Meccanico, elettrauto, gommista e servizio camper a Faenza.
+              Oltre {BUSINESS.experienceYears} anni di esperienza al servizio dei vostri veicoli a Faenza.
             </p>
             <div className={styles.socialRow}>
               <a
@@ -104,7 +103,7 @@ export function Footer() {
               <Clock size={16} className={styles.contactIcon} />
               <div>
                 <div>{BUSINESS.orari.feriali}</div>
-                <div>{BUSINESS.orari.sabato}</div>
+                <div>{BUSINESS.orari.domenica}</div>
               </div>
             </div>
           </div>
